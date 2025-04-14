@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image CTF Challenge</title>
-  <style>
-    body { font-family: monospace; background-color: #111; color: #0f0; padding: 2rem; }
-    h1, p { color: #0f0; }
-    a { color: #0ff; }
-    input, button { padding: 0.5rem; font-size: 1rem; margin-top: 1rem; }
-    .correct { color: green; }
-    .incorrect { color: red; }
-  </style>
-</head>
+
 <body>
   <h1>🕵️‍♀️ Image CTF Challenge</h1>
   <p>We found this suspicious image on a compromised machine. It looks innocent, but we believe something is hidden inside. Can you find the flag?</p>
