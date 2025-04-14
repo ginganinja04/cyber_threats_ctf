@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intercepted CTF Challenge</title>
+  <style>
+    body { font-family: monospace; background-color: #111; color: #0f0; padding: 2rem; }
+    h1, p { color: #0f0; }
+    a { color: #0ff; }
+    input, button { padding: 0.5rem; font-size: 1rem; margin-top: 1rem; }
+    .correct { color: green; }
+    .incorrect { color: red; }
+  </style>
+</head>
+<body>
+  <h1>🛰️ Intercepted Transmission: CTF Challenge</h1>
+  <p>Our team intercepted a suspicious communication between two persons of interest. Attached was an image — seemingly a harmless photo from a tropical vacation.</p>
+  <p>At first glance, it appears to be just a vacation photo... but we believe there's more than meets the eye.</p>
+  <p>Your mission: Analyze the image file for hidden contents and extract the flag.</p>
+
+  <p><strong>Download the intercepted file:</strong></p>
+  <ul>
+    <li><a href="my_vacation.jpg" download>my_vacation.jpg</a></li>
+  </ul>
+
+  <p><em>Recommended tools: binwalk, steghide, exiftool, unzip...</em></p>
+
+  <h3>Submit the Flag You Discover:</h3>
+  <form id="flag-form">
+    <input type="text" id="flag-input" placeholder="Enter the flag here..." required>
+    <button type="submit">Submit Flag</button>
+  </form>
+
+  <p id="result-message"></p>
+
+  <script>
+    const correctFlag = "FLAG{d0ubl3_l4y3r_d3c3pt10n}";
+
+    document.getElementById('flag-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const userFlag = document.getElementById('flag-input').value.trim();
+      const resultMessage = document.getElementById('result-message');
+
+      if (userFlag === correctFlag) {
+        resultMessage.textContent = "✅ Correct! You've uncovered the hidden flag!";
+        resultMessage.className = "correct";
+      } else {
+        resultMessage.textContent = "❌ Incorrect. Keep investigating the image.";
+        resultMessage.className = "incorrect";
+      }
+
+      document.getElementById('flag-input').value = '';
+    });
+  </script>
+</body>
+</html>
